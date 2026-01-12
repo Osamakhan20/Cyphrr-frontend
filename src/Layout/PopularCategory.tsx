@@ -54,11 +54,11 @@ const categories: Category[] = [
 
 const PopularCategories = () => {
   return (
-    <section className="bg-secondary px-6 py-16">
+    <section className="bg-secondary px-62 py-16">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col items-center md:flex-row md:justify-between gap-4 mb-10">
           <div className="text-center md:text-left">
-            <h2 className="text-textGray text-2xl md:text-3xl font-bold">
+            <h2 className="text-textGray text-2xl md:text-3xl font-bold" >
               Popular Categories
             </h2>
             <p className="text-primary text-sm mt-1">9999+ Jobs Category</p>

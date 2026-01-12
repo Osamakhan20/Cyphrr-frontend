@@ -22,7 +22,7 @@ const ContactSection = () => {
   return (
     <section className="bg-secondary px-6 py-20 -mt-80">
       <div className="max-w-5xl mx-auto text-center">
-        <p className="text-primary text-sm font-semibold mb-2">Get in Touch</p>
+        <p className="text-primary  font-semibold mb-2">Get in Touch</p>
 
         <h2 className="text-textGray text-3xl md:text-4xl font-bold mb-14">
           Have any questions, feel free to message us!

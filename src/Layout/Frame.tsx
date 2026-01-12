@@ -28,10 +28,8 @@ export const FrameSection = () => {
   return (
     <section className="bg-primary px-6 py-20">
       <div className="max-w-7xl mx-auto text-center">
-        {/* Heading */}
         <h2 className="text-3xl font-bold text-black mb-14">How it Works?</h2>
 
-        {/* Steps */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {steps.map((step) => (
             <div key={step.title} className="flex flex-col items-center">

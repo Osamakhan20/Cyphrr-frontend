@@ -13,8 +13,6 @@ const supportLinks = ["Technical Support"];
 export const Footer = () => {
   return (
     <footer className="bg-secondary">
-      
-
       <div className="px-6 py-14">
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8">
           <div>
@@ -56,7 +54,7 @@ export const Footer = () => {
             </ul>
           </div>
 
-          <div className="items-center">
+          <div>
             <h4 className="text-textGray font-semibold mb-3">Follow :</h4>
             <div className="flex gap-4">
               <InstgramIcon className="size-5 cursor-pointer text-primary" />
