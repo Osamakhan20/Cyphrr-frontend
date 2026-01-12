@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import {
   SoftwareImg,
   MarketingImg,
@@ -87,7 +88,7 @@ const PopularCategories = () => {
             </p>
 
             <span className="mt-auto flex items-center gap-2 text-primary text-sm font-medium hover:gap-3 transition-all cursor-pointer">
-              Learn More <span>→</span>
+              <Link to="/about">Learn More <span>→</span> </Link>
             </span>
           </div>
         ))}
