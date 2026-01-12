@@ -1,9 +1,11 @@
-import MeetingImg from "../assets/meeting.png";
 import { PlayIcon } from "../Helper/Icons";
 import { StatsGrid } from "../Layout/StatsSection";
-import { CompanyImg, EmployeeImg, SuitcaseImg } from "../Helper/Icons";
-
-
+import {
+  CompanyImg,
+  EmployeeImg,
+  SuitcaseImg,
+  MeetingImg,
+} from "../Helper/Icons";
 
 export const MeetingSection = () => {
   return (
@@ -44,12 +46,7 @@ export const MeetingSection = () => {
         </div>
 
         <div className="relative rounded-2xl overflow-hidden">
-          <img
-            src={MeetingImg}
-            alt="Team meeting"
-            className="w-full h-full object-cover"
-          />
-
+          <MeetingImg className="w-full h-full object-cover" />
           <div className="absolute inset-0 bg-primary/30" />
 
           <button className="absolute inset-0 flex items-center justify-center">
