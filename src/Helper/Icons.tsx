@@ -40,7 +40,8 @@ import candidateIcon from "../assets/candidateIcon.png";
 import searchIcon from "../assets/searchIcon.png";
 import supportIcon from "../assets/Support.png";
 import addressIcon from "../assets/Addrerss.png";
-import emailIcon from "../assets/EmailIcon.png"
+import emailIcon from "../assets/EmailIcon.png";
+import homebackground from "../assets/HomeBackground.png";
 
 export const PhoneIcon = ({ className = "size-6" }) => (
   <img src={phoneImg} className={className} />
@@ -215,4 +216,8 @@ export const AddresIcon = ({ className = "size-10" }) => (
 
 export const EmailIcon = ({ className = "size-10" }) => (
   <img src={emailIcon} className={className} />
+);
+
+export const HomeBackground = ({ className = "size-30" }) => (
+  <img src={homebackground} className={className} />
 );

@@ -1,53 +1,65 @@
-import { BackgroundImg, FacebookIcon, IgIcon, TwitterIcon } from '../Helper/Icons';
+import {
+  BackgroundImg,
+  FacebookIcon,
+  HomeBackground,
+  IgIcon,
+  TwitterIcon,
+} from "../Helper/Icons";
 
 const HeroSection = () => {
-    return (
-        <section className="relative w-full min-h-[80vh] flex items-center bg-secondary px-6 py-12 md:px-12 lg:px-24">
-            <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+  return (
+    <section className="relative w-full min-h-[60vh] md:min-h-[80vh] flex items-center pt-24 md:pt-32 px-6 py-8 md:py-12 md:px-12 lg:px-24 overflow-hidden">
+      <HomeBackground className="absolute inset-0 w-full h-full object-cover" />
 
-               
-                <div className="order-2 md:order-1 space-y-6">
-                    <h4 className="text-2xl md:text-4xl font-extrabold text-textGray leading-tight">
-                        Unlock your dream career by exploring opportunities.
-                    </h4>
-                    <p className="text-lg text-primary max-w-lg">
-                        Build seamless digital experiences with modern tools. Our platform
-                        empowers developers to create, scale, and maintain high-performance
-                        applications with ease.
-                    </p>
-                    <h4 className="text-1xl md:text-2xl font-extrabold text-textGray leading-tight">
-                        popular Services
-                    </h4>
-                    <p className="text-lg text-primary max-w-lg">
-                        Set yourself apart from the competition by creating a dynamic video resume or CV that highlights your skills, experience, and accomplishments.
-                    </p>
+      <div className="absolute inset-0 bg-[#0f3d3e]/70" />
 
-                    
-                    <div className="flex items-center gap-6 pt-4 ">
-                        <p className='text-1xl text-textGray'>Follow Us:</p>
-                        <a href="#" className="bg-primary transition-colors">
-                            <IgIcon  />
-                        </a>
-                        <a href="#" className=" bg-primary hover:text-blue-400 transition-colors">
-                            <FacebookIcon />
-                        </a>
-                        <a href="#" className="bg-primary hover:text-blue-700 transition-colors">
-                            <TwitterIcon />
-                        </a>
-                    </div>
-                </div>
+      <div className="relative z-10 max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div className="order-2 md:order-1 space-y-4 md:space-y-6">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-textGray leading-tight">
+            Unlock your dream career
+            <br />
+            by exploring opportunities.
+          </h1>
 
-                
-                <div className="order-1 md:order-2 flex justify-center">
-                    <div className="relative w-full max-w-md aspect-square rounded-2xl overflow-hidden shadow-2xl">
+          <p className="text-sm sm:text-base md:text-lg text-primary max-w-lg">
+            Welcome to CYPHRR, where your dream job is just a click away.
+            Recognizing the difficulties of job hunting, we’ve developed a
+            simpler solution.
+          </p>
 
-                        <BackgroundImg className='w-4xl min-h-11/12'/>
-                    </div>
-                </div>
+          <h4 className="text-base md:text-xl font-bold text-textGray pt-4 md:pt-6">
+            Popular Services
+          </h4>
 
-            </div>
-        </section>
-    );
+          <p className="text-sm sm:text-base md:text-lg text-primary max-w-lg">
+            Set yourself apart from the competition by creating a dynamic video
+            resume or CV that highlights your skills, experience, and
+            accomplishments.
+          </p>
+
+          <div className="flex items-center gap-4 pt-4 flex-wrap">
+            <p className="text-sm font-bold text-primary">Follow Us :</p>
+
+            <a className="p-2 rounded bg-primary hover:scale-110 transition">
+              <IgIcon />
+            </a>
+            <a className="p-2 rounded bg-primary hover:scale-110 transition">
+              <FacebookIcon />
+            </a>
+            <a className="p-2 rounded bg-primary hover:scale-110 transition">
+              <TwitterIcon />
+            </a>
+          </div>
+        </div>
+
+        <div className="order-1 md:order-2 flex justify-center">
+          <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
+            <BackgroundImg className="w-full h-auto object-contain" />
+          </div>
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default HeroSection;

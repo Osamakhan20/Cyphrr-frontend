@@ -13,8 +13,8 @@ const supportLinks = ["Technical Support"];
 export const Footer = () => {
   return (
     <footer className="bg-secondary">
-      <div className="px-6 py-14">
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-5 gap-8">
+      <div className="px-6 py-10 md:py-14">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6 md:gap-8">
           <div>
             <h4 className="text-textGray font-semibold mb-3">Documentation</h4>
             <ul className="space-y-2 text-primary text-sm">
@@ -30,9 +30,7 @@ export const Footer = () => {
             <h4 className="text-textGray font-semibold mb-3">Company</h4>
             <ul className="space-y-2 text-primary text-sm">
               {companyLinks.map((item) => (
-                <li key={item} className="cursor-pointer hover:underline">
-                  {item}
-                </li>
+                <li key={item} className="cursor-pointer hover:underline">{item}</li>
               ))}
             </ul>
           </div>
@@ -47,9 +45,7 @@ export const Footer = () => {
             <h4 className="text-textGray font-semibold mb-3">Support</h4>
             <ul className="space-y-2 text-primary text-sm">
               {supportLinks.map((item) => (
-                <li key={item} className="cursor-pointer hover:underline">
-                  {item}
-                </li>
+                <li key={item} className="cursor-pointer hover:underline">{item}</li>
               ))}
             </ul>
           </div>
@@ -65,9 +61,7 @@ export const Footer = () => {
         </div>
       </div>
 
-      <div className="border-t border-primary/20 py-4 text-center text-primary text-xs">
-        © Copyright 2024, All Rights Reserved by CYPHRR
-      </div>
+      <div className="border-t border-primary/20 py-4 text-center text-primary text-xs">© Copyright 2024, All Rights Reserved by CYPHRR</div>
     </footer>
   );
 };

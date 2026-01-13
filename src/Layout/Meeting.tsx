@@ -9,7 +9,7 @@ import {
 
 export const MeetingSection = () => {
   return (
-    <section className="bg-secondary px-6 py-16 -mt-80">
+    <section className="bg-secondary px-6 py-16">
       <div className="max-w-7xl mx-auto space-y-12">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
           <div>
