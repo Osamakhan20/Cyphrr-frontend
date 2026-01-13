@@ -58,7 +58,7 @@ export const Navbar = () => {
           </div>
 
           <button
-            onClick={() => setIsOpen(!isOpen)}
+            onClick={() => setIsOpen((prev) => !prev)}
             className="md:hidden text-primary text-2xl"
           >
             {isOpen ? "✕" : "☰"}
@@ -70,29 +70,34 @@ export const Navbar = () => {
         <div className="md:hidden bg-secondary px-6 py-6 space-y-4">
           <NavLink
             to="/"
+            onClick={() => setIsOpen(false)}
             className={({ isActive }) =>
               `block font-semibold transition ${
-                isActive ? "text-black" : "text-primary"
+                isActive ? "text-primary" : "text-textGray"
               }`
             }
           >
             Home
           </NavLink>
+
           <NavLink
             to="/about"
+            onClick={() => setIsOpen(false)}
             className={({ isActive }) =>
               `block font-semibold transition ${
-                isActive ? "text-black" : "text-primary"
+                isActive ? "text-primary" : "text-textGray"
               }`
             }
           >
             About
           </NavLink>
+
           <NavLink
             to="/contact"
+            onClick={() => setIsOpen(false)}
             className={({ isActive }) =>
               `block font-semibold transition ${
-                isActive ? "text-black" : "text-primary"
+                isActive ? "text-primary" : "text-textGray"
               }`
             }
           >

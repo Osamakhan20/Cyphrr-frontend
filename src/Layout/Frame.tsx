@@ -1,26 +1,31 @@
-import { AccountImg, ProfileImg, AlertImg, ListingImg } from "../Helper/Icons";
+import {
+  FrameAccount,
+  FrameProfile,
+  FrameAlert,
+  FrameListing,
+} from "../Helper/Icons";
 
 const steps = [
   {
     title: "Create an Account",
     description: "Sign up now to gain access to all resources with CYPHRR.",
-    icon: <AccountImg className="size-10 text-black" />,
+    icon: <FrameAccount className="size-11 text-black" />,
   },
   {
     title: "Complete Your Profile",
     description: "Complete your profile fully to boost our job search results.",
-    icon: <ProfileImg className="size-10 text-black" />,
+    icon: <FrameProfile className="size-11 text-black" />,
   },
   {
     title: "Set Up Job Alerts",
     description: "Activate real-time job alerts and notifications with CYPHRR.",
-    icon: <AlertImg className="size-10 text-black" />,
+    icon: <FrameAlert className="size-11 text-black" />,
   },
   {
     title: "Explore Job Listings",
     description:
       "Explore thousands of job areas that align with your preferences.",
-    icon: <ListingImg className="size-10 text-black" />,
+    icon: <FrameListing className="size-11 text-black" />,
   },
 ];
 
@@ -33,9 +38,7 @@ export const FrameSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
           {steps.map((step) => (
             <div key={step.title} className="flex flex-col items-center">
-              <div className="bg-black text-primary rounded-xl p-4 mb-4">
-                {step.icon}
-              </div>
+              <div className="  rounded-xl p-4 mb-2">{step.icon}</div>
 
               <h4 className="font-semibold text-black mb-2">{step.title}</h4>
 
@@ -49,5 +52,3 @@ export const FrameSection = () => {
     </section>
   );
 };
-
-

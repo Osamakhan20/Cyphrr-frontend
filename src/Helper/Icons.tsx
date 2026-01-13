@@ -42,6 +42,24 @@ import supportIcon from "../assets/Support.png";
 import addressIcon from "../assets/Addrerss.png";
 import emailIcon from "../assets/EmailIcon.png";
 import homebackground from "../assets/HomeBackground.png";
+import fbgreen from "../assets/fbGreen.png"
+import iggreen from "../assets/igGreen.png"
+import twgreen from "../assets/twGreen.png"
+import frameprofile from "../assets/FrameProfile.png"
+import frameaccount from "../assets/FrameAccount.png"
+import framelisting from "../assets/FrameListing.png"
+import framealert from "../assets/FrameAlert.png"
+
+
+
+
+
+
+
+
+
+
+
 
 export const PhoneIcon = ({ className = "size-6" }) => (
   <img src={phoneImg} className={className} />
@@ -221,3 +239,34 @@ export const EmailIcon = ({ className = "size-10" }) => (
 export const HomeBackground = ({ className = "size-30" }) => (
   <img src={homebackground} className={className} />
 );
+
+export const FbGreen = ({ className = "size-7" }) => (
+  <img src={fbgreen} className={className} />
+);
+
+export const IgGreen = ({ className = "size-7" }) => (
+  <img src={iggreen} className={className} />
+);
+
+export const TwGreen = ({ className = "size-7" }) => (
+  <img src={twgreen} className={className} />
+);
+
+export const FrameProfile = ({ className = "size-7" }) => (
+  <img src={frameprofile} className={className} />
+);
+
+export const FrameAccount = ({ className = "size-7" }) => (
+  <img src={frameaccount} className={className} />
+);
+
+export const FrameAlert = ({ className = "size-7" }) => (
+  <img src={framealert} className={className} />
+);
+
+export const FrameListing = ({ className = "size-7" }) => (
+  <img src={framelisting} className={className} />
+);
+
+
+

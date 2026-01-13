@@ -1,4 +1,4 @@
-import { FbIcon, InstgramIcon, XIcon } from "../Helper/Icons";
+import { FbGreen, IgGreen, TwGreen } from "../Helper/Icons";
 
 const documentationLinks = [
   "Terms of use",
@@ -30,7 +30,9 @@ export const Footer = () => {
             <h4 className="text-textGray font-semibold mb-3">Company</h4>
             <ul className="space-y-2 text-primary text-sm">
               {companyLinks.map((item) => (
-                <li key={item} className="cursor-pointer hover:underline">{item}</li>
+                <li key={item} className="cursor-pointer hover:underline">
+                  {item}
+                </li>
               ))}
             </ul>
           </div>
@@ -45,7 +47,9 @@ export const Footer = () => {
             <h4 className="text-textGray font-semibold mb-3">Support</h4>
             <ul className="space-y-2 text-primary text-sm">
               {supportLinks.map((item) => (
-                <li key={item} className="cursor-pointer hover:underline">{item}</li>
+                <li key={item} className="cursor-pointer hover:underline">
+                  {item}
+                </li>
               ))}
             </ul>
           </div>
@@ -53,15 +57,17 @@ export const Footer = () => {
           <div>
             <h4 className="text-textGray font-semibold mb-3">Follow :</h4>
             <div className="flex gap-4">
-              <InstgramIcon className="size-5 cursor-pointer text-primary" />
-              <FbIcon className="size-5 cursor-pointer text-primary" />
-              <XIcon className="size-5 cursor-pointer text-primary" />
+              <IgGreen className="size-5 cursor-pointer " />
+              <FbGreen className="size-5 cursor-pointer" />
+              <TwGreen className="size-5 cursor-pointer" />
             </div>
           </div>
         </div>
       </div>
 
-      <div className="border-t border-primary/20 py-4 text-center text-primary text-xs">© Copyright 2024, All Rights Reserved by CYPHRR</div>
+      <div className="border-t border-primary/20 py-4 text-center text-primary text-xs">
+        © Copyright 2024, All Rights Reserved by CYPHRR
+      </div>
     </footer>
   );
 };
