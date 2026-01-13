@@ -1,5 +1,4 @@
 import { AboutImg } from "../Helper/Icons";
-import { Navbar } from "./Navbar";
 
 type AboutProps = {
   title?: string;
