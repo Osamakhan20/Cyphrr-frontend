@@ -1,6 +1,8 @@
-import { contactInfo } from "../Helper/AppConstant";
+import AppConstants from "../Helper/AppConstant";
 
 const ContactSection = () => {
+  const { contactInfo } = AppConstants;
+
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
   };
@@ -18,7 +20,7 @@ const ContactSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12 mb-8 sm:mb-10">
           {contactInfo &&
             contactInfo.length > 0 &&
-            contactInfo.map((item) => (
+            contactInfo.map((item: ContactInfo) => (
               <div key={item.title} className="flex flex-col items-center">
                 <div className="rounded-full p-4 sm:p-5">{item.icon}</div>
 

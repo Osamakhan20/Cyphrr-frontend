@@ -1,13 +1,10 @@
 import { PlayIcon } from "../Helper/Icons";
 import { StatsGrid } from "../Layout/StatsSection";
-import {
-  CompanyImg,
-  EmployeeImg,
-  SuitcaseImg,
-  MeetingImg,
-} from "../Helper/Icons";
+import { MeetingImg } from "../Helper/Icons";
+import AppConstants from "../Helper/AppConstant";
 
 export const MeetingSection = () => {
+  const { items } = AppConstants;
   return (
     <section className="bg-secondary px-6 py-16">
       <div className="max-w-7xl mx-auto space-y-12">
@@ -55,30 +52,7 @@ export const MeetingSection = () => {
             </div>
           </button>
         </div>
-        <StatsGrid
-          items={[
-            {
-              icon: <SuitcaseImg className="size-12" />,
-              value: "500+",
-              label: "Jobs",
-            },
-            {
-              icon: <CompanyImg className="size-12" />,
-              value: "250+",
-              label: "Companies",
-            },
-            {
-              icon: <EmployeeImg className="size-12" />,
-              value: "1000+",
-              label: "Employees",
-            },
-            {
-              icon: <EmployeeImg className="size-12" />,
-              value: "5000+",
-              label: "Satisfied Clients",
-            },
-          ]}
-        />
+        <StatsGrid items={items} />
       </div>
     </section>
   );

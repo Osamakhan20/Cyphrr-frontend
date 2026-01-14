@@ -1,55 +1,9 @@
 import { Link } from "react-router-dom";
-import {
-  SoftwareImg,
-  MarketingImg,
-  NurseImg,
-  FinancialImg,
-  GraphicImg,
-  OpeartionImg,
-} from "../Helper/Icons";
-
-
-
-const categories: Category[] = [
-  {
-    icon: <SoftwareImg className="size-6" />,
-    title: "Software Engineer",
-    description:
-      "Software developers are responsible designing, developing, and maintaining software",
-  },
-  {
-    icon: <MarketingImg className="size-6" />,
-    title: "Marketing Specialist",
-    description:
-      "Marketing specialists develop and implement marketing strategies to promote products",
-  },
-  {
-    icon: <NurseImg className="size-6" />,
-    title: "Registered Nurse",
-    description:
-      "Registered nurses provide patient administer medications, and assist in medical",
-  },
-  {
-    icon: <FinancialImg className="size-6" />,
-    title: "Financial Analyst",
-    description:
-      "Financial analysts evaluate financial prepare reports, and provide insights to help",
-  },
-  {
-    icon: <GraphicImg className="size-6" />,
-    title: "Graphic Designer",
-    description:
-      "Graphic designers create visual concept and designs for various projects such",
-  },
-  {
-    icon: <OpeartionImg className="size-6" />,
-    title: "Operations Manager",
-    description:
-      "Operations managers are respon overseeing daily operations and processes within",
-  },
-];
+import AppConstants from "../Helper/AppConstant";
 
 const PopularCategories = () => {
+
+  const { categories} = AppConstants;
   return (
     <section className="bg-secondary px-6 sm:px-8 lg:px-16 py-12 sm:py-16">
       <div className="max-w-7xl mx-auto">

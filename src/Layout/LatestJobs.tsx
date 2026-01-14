@@ -1,67 +1,8 @@
-import {
-  AppleIcon,
-  BookmarkIcon,
-  FbIcon,
-  GoogleIcon,
-  InstgramIcon,
-  MicrosoftIcon,
-  XIcon,
-} from "../Helper/Icons";
-import type {Job} from "../types/typeUtilis"
-
-
-const jobs: Job[] = [
-  {
-    company: "Instagram",
-    role: "Brand Partnerships Manager",
-    time: "2 Days Ago",
-    description:
-      "Brand partnerships managers collaborate brands and advertisers to develop strategic",
-    icon: <InstgramIcon className="size-10" />,
-  },
-  {
-    company: "Twitter",
-    role: "HR Business Partner",
-    time: "2 Days Ago",
-    description:
-      "HR business partners work with Twitter’s leadership and employees to support organizational",
-    icon: <XIcon className="size-10" />,
-  },
-  {
-    company: "Facebook",
-    role: "User Experience (UX) Designer",
-    time: "2 Days Ago",
-    description:
-      "UX designers focus on creating intuitive and friendly experiences for Facebook’s products",
-    icon: <FbIcon className="size-10" />,
-  },
-  {
-    company: "Google",
-    role: "Technical Support Specialist",
-    time: "2 Days Ago",
-    description:
-      "Technical support specialists provide assistance to Google’s customers and users who encounter",
-    icon: <GoogleIcon className="size-10" />,
-  },
-  {
-    company: "Microsoft",
-    role: "Cloud Solutions Architect",
-    time: "2 Days Ago",
-    description:
-      "Cloud solutions architects design and imple cloud-based solutions using Microsoft Azure",
-    icon: <MicrosoftIcon className="size-10" />,
-  },
-  {
-    company: "Apple",
-    role: "Customer Support Specialist",
-    time: "2 Days Ago",
-    description:
-      "Customer support specialists assist customers with technical issues, product inquiries",
-    icon: <AppleIcon className="size-10" />,
-  },
-];
+import AppConstants from "../Helper/AppConstant";
+import { BookmarkIcon } from "../Helper/Icons";
 
 const LatestJobs = () => {
+  const { jobs } = AppConstants;
   return (
     <section className="bg-secondary px-6 py-12 sm:py-16">
       <div className="max-w-7xl mx-auto">

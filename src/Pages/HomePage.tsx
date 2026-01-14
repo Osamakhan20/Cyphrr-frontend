@@ -9,7 +9,6 @@ import { StatsSection } from "../Layout/StatsSection";
 export const HomePage = () => {
   return (
     <>
-      
       <HeroSection />
       <StatsSection />
       <PopularCategories />

@@ -1,17 +1,9 @@
 import { Job1, Job2 } from "../Helper/Icons";
 
-const jobSeekers = [
-  "Software Developer",
-  "Registered Nurse",
-  "Graphic Designer",
-  "Marketing Specialist",
-  "Financial Analyst",
-  "Data Analyst",
-];
+import AppConstants from "../Helper/AppConstant";
 
-type JobFinderSectionProps = {
-  imageFirst?: boolean;
-};
+
+const { jobSeekers } = AppConstants;
 
 const JobFinderSection = ({ imageFirst = true }: JobFinderSectionProps) => {
   return (

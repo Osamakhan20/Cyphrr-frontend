@@ -1,10 +1,9 @@
 import { StatsGrid } from "./StatsticsItems";
-import { CompanyImg, EmployeeImg, SuitcaseImg } from "../Helper/Icons";
-
-
-
+import AppConstants from "../Helper/AppConstant";
 
 export const StatsSection = () => {
+  const { items } = AppConstants;
+
   return (
     <section className="bg-secondary px-6 py-12 sm:py-16">
       <div className="max-w-7xl mx-auto text-center">
@@ -17,12 +16,7 @@ export const StatsSection = () => {
       </div>
 
       <StatsGrid
-        items={[
-          { icon: <SuitcaseImg className="size-12" />, value: "500+", label: "Jobs" },
-          { icon: <CompanyImg className="size-12" />, value: "250+", label: "Companies" },
-          { icon: <EmployeeImg className="size-12" />, value: "1000+", label: "Employees" },
-          { icon: <EmployeeImg className="size-12" />, value: "5000+", label: "Satisfied Clients" },
-        ]}
+        items={items}
       />
     </section>
   );

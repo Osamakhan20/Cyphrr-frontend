@@ -1,43 +1,8 @@
-import {
-  AccountImg,
-  AlertImg,
-  CarImg,
-  HomeImg,
-  ListingImg,
-  ProfileImg,
-} from "../Helper/Icons";
-
-type Services = {
-  heading: string;
-  description: string;
-  icon: React.ReactNode;
-};
-
-const ServicesData: Services[] = [
-  {
-    heading: "Create an Account",
-    description: "Sign up now to gain access to all resources with CYPHRR.",
-    icon: <AccountImg className="size-8" />,
-  },
-  {
-    heading: "Complete Your Profile",
-    description: "Complete your profile fully to boost our job search results.",
-    icon: <ProfileImg className="size-8" />,
-  },
-  {
-    heading: "Set Up Job Alerts",
-    description: "Activate real-time job alerts and notifications with CYPHRR.",
-    icon: <AlertImg className="size-8" />,
-  },
-  {
-    heading: "Explore Job Listings",
-    description:
-      "Explore thousands of job areas that align with your preferences.",
-    icon: <ListingImg className="size-8" />,
-  },
-];
+import { CarImg, HomeImg } from "../Helper/Icons";
+import AppConstants from "../Helper/AppConstant";
 
 export const Services = () => {
+  const { ServicesData} = AppConstants;
   return (
     <section className="bg-secondary px-6 py-16">
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">

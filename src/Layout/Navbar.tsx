@@ -1,12 +1,9 @@
 import { useState } from "react";
 import { Logo, PersonIcon } from "../Helper/Icons";
 import { NavLink } from "react-router-dom";
+import AppConstants from "../Helper/AppConstant";
 
-const navLinks: NavItem[] = [
-  { label: "Home", path: "/" },
-  { label: "About", path: "/about" },
-  { label: "Contact", path: "/contact" },
-];
+const { navLinks } = AppConstants;
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +22,7 @@ export const Navbar = () => {
           <Logo className="h-10 w-auto" />
 
           <div className="hidden md:flex items-center gap-10 text-xl font-bold">
-            {navLinks.map(({ label, path }) => (
+            {navLinks.map(({ label, path }: NavItem) => (
               <NavLink key={path} to={path} className={navLinkClass}>
                 {label}
               </NavLink>
@@ -53,7 +50,7 @@ export const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-secondary px-6 py-6 space-y-4 fl flex flex-col">
+        <div className="md:hidden bg-secondary px-6 py-6 space-y-4  flex flex-col">
           {navLinks &&
             navLinks.length > 0 &&
             navLinks.map(({ label, path }) => (

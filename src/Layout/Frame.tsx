@@ -1,35 +1,7 @@
-import {
-  FrameAccount,
-  FrameProfile,
-  FrameAlert,
-  FrameListing,
-} from "../Helper/Icons";
-
-const steps = [
-  {
-    title: "Create an Account",
-    description: "Sign up now to gain access to all resources with CYPHRR.",
-    icon: <FrameAccount className="size-11 text-black" />,
-  },
-  {
-    title: "Complete Your Profile",
-    description: "Complete your profile fully to boost our job search results.",
-    icon: <FrameProfile className="size-11 text-black" />,
-  },
-  {
-    title: "Set Up Job Alerts",
-    description: "Activate real-time job alerts and notifications with CYPHRR.",
-    icon: <FrameAlert className="size-11 text-black" />,
-  },
-  {
-    title: "Explore Job Listings",
-    description:
-      "Explore thousands of job areas that align with your preferences.",
-    icon: <FrameListing className="size-11 text-black" />,
-  },
-];
+import AppConstants from "../Helper/AppConstant";
 
 export const FrameSection = () => {
+  const { steps } = AppConstants;
   return (
     <section className="bg-primary px-6 py-20">
       <div className="max-w-7xl mx-auto text-center">

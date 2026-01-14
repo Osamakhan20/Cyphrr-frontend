@@ -1,34 +1,47 @@
-import type { JSX } from "react";
+import type { JSX, ReactNode } from "react";
 
 export {};
 
+declare global {
+  interface NavItem {
+    label: string;
+    path: string;
+  }
 
-declare global{
+  interface Category {
+    icon: React.ReactNode;
+    title: string;
+    description: string;
+  }
 
-  export  interface NavItem  {
-  label: string;
-  path: string;
-}
+  interface Job {
+    company: string;
+    role: string;
+    time: string;
+    description: string;
+    icon: React.ReactNode;
+  }
 
-export interface Category {
-  icon: React.ReactNode;
-  title: string;
-  description: string;
-}
+  interface ContactInfo {
+    title: string;
+    value: string;
+    icon: JSX.Element;
+  }
 
+  type Services = {
+    heading: string;
+    description: string;
+    icon: React.ReactNode;
+  };
 
-export interface Job  {
-  company: string;
-  role: string;
-  time: string;
-  description: string;
-  icon: React.ReactNode;
-}
-
-export interface ContactInfo  {
-  title: string;
-  value: string;
-  icon: JSX.Element;
-}
+  type StatItemProps = {
+    icon: ReactNode;
+    label: string;
+    value: string;
+  };
+  type Stat = StatItemProps;
+  type JobFinderSectionProps = {
+  imageFirst?: boolean;
+};
 
 }
