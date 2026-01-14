@@ -1,29 +1,4 @@
-import type { JSX } from "react";
-import { AddresIcon, SupportIcon, EmailIcon } from "../Helper/Icons";
-
-type ContactInfo = {
-  title: string;
-  value: string;
-  icon: JSX.Element;
-};
-
-const contactInfo: ContactInfo[] = [
-  {
-    title: "Our Address",
-    value: "Grand Cayman, Cayman Islands",
-    icon: <AddresIcon className="size-15 text-primary" />,
-  },
-  {
-    title: "Our Email",
-    value: "info@cyphrr.com",
-    icon: <EmailIcon className="size-15 text-primary" />,
-  },
-  {
-    title: "Live Support",
-    value: "www.cyphrrlivechat.com",
-    icon: <SupportIcon className="size-15 text-primary" />,
-  },
-];
+import { contactInfo } from "../Helper/AppConstant";
 
 const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
@@ -41,18 +16,27 @@ const ContactSection = () => {
         </h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 sm:gap-12 mb-8 sm:mb-10">
-          {contactInfo.map((item) => (
-            <div key={item.title} className="flex flex-col items-center">
-              <div className="rounded-full p-4 sm:p-5">{item.icon}</div>
+          {contactInfo &&
+            contactInfo.length > 0 &&
+            contactInfo.map((item) => (
+              <div key={item.title} className="flex flex-col items-center">
+                <div className="rounded-full p-4 sm:p-5">{item.icon}</div>
 
-              <h4 className="text-primary font-semibold mb-2">{item.title}</h4>
+                <h4 className="text-primary font-semibold mb-2">
+                  {item.title}
+                </h4>
 
-              <p className="text-[#E3E9E7] text-sm text-center max-w-xs">{item.value}</p>
-            </div>
-          ))}
+                <p className="text-[#E3E9E7] text-sm text-center max-w-xs">
+                  {item.value}
+                </p>
+              </div>
+            ))}
         </div>
 
-        <form onSubmit={handleSubmit} className="max-w-3xl mx-auto space-y-6 text-left px-2 sm:px-0">
+        <form
+          onSubmit={handleSubmit}
+          className="max-w-3xl mx-auto space-y-6 text-left px-2 sm:px-0"
+        >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="space-y-2">
               <label className="text-white text-sm font-medium">Name *</label>
@@ -83,7 +67,9 @@ const ContactSection = () => {
           </div>
 
           <div className="space-y-2">
-            <label className="text-white text-sm font-medium">Your Message *</label>
+            <label className="text-white text-sm font-medium">
+              Your Message *
+            </label>
             <textarea
               rows={6}
               placeholder="Message"

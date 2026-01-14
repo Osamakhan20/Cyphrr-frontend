@@ -64,15 +64,23 @@ export const Services = () => {
           </p>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pl-14">
-            {ServicesData.map((Services) => (
-              <div key={Services.heading} className="flex gap-4">
-                <div className="w-20 h-12 flex items-center justify-center bg-primary rounded-lg">{Services.icon}</div>
-                <div>
-                  <h4 className="text-textGray font-semibold">{Services.heading}</h4>
-                  <p className="text-primary text-sm mt-1 leading-relaxed">{Services.description}</p>
+            {ServicesData &&
+              ServicesData.length > 0 &&
+              ServicesData.map((Services) => (
+                <div key={Services.heading} className="flex gap-4">
+                  <div className="w-20 h-12 flex items-center justify-center bg-primary rounded-lg">
+                    {Services.icon}
+                  </div>
+                  <div>
+                    <h4 className="text-textGray font-semibold">
+                      {Services.heading}
+                    </h4>
+                    <p className="text-primary text-sm mt-1 leading-relaxed">
+                      {Services.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
           </div>
         </div>
       </div>

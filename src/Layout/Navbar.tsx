@@ -2,48 +2,34 @@ import { useState } from "react";
 import { Logo, PersonIcon } from "../Helper/Icons";
 import { NavLink } from "react-router-dom";
 
+const navLinks: NavItem[] = [
+  { label: "Home", path: "/" },
+  { label: "About", path: "/about" },
+  { label: "Contact", path: "/contact" },
+];
+
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+
+  const closeMenu = () => setIsOpen(false);
+
+  const navLinkClass = ({ isActive }: { isActive: boolean }) =>
+    `font-semibold transition hover:opacity-80 ${
+      isActive ? "text-primary" : "text-textGray"
+    }`;
 
   return (
     <nav className="absolute top-9 left-0 w-full z-50">
       <div className="max-w-7xl mx-auto px-6">
         <div className="flex justify-between items-center h-20">
-          <div className="flex items-center">
-            <Logo className="h-10 w-auto" />
-          </div>
+          <Logo className="h-10 w-auto" />
 
-          <div className="hidden md:flex items-center gap-10 font-bold text-xl">
-            <NavLink
-              to="/"
-              className={({ isActive }) =>
-                `font-semibold hover:opacity-80 transition ${
-                  isActive ? "text-primary" : "text-textGray"
-                }`
-              }
-            >
-              Home
-            </NavLink>
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                `font-semibold hover:opacity-80 transition ${
-                  isActive ? "text-primary" : "text-textGray"
-                }`
-              }
-            >
-              About
-            </NavLink>
-            <NavLink
-              to="/contact"
-              className={({ isActive }) =>
-                `font-semibold hover:opacity-80 transition ${
-                  isActive ? "text-primary" : "text-textGray"
-                }`
-              }
-            >
-              Contact
-            </NavLink>
+          <div className="hidden md:flex items-center gap-10 text-xl font-bold">
+            {navLinks.map(({ label, path }) => (
+              <NavLink key={path} to={path} className={navLinkClass}>
+                {label}
+              </NavLink>
+            ))}
           </div>
 
           <div className="hidden md:flex items-center gap-4">
@@ -67,42 +53,19 @@ export const Navbar = () => {
       </div>
 
       {isOpen && (
-        <div className="md:hidden bg-secondary px-6 py-6 space-y-4">
-          <NavLink
-            to="/"
-            onClick={() => setIsOpen(false)}
-            className={({ isActive }) =>
-              `block font-semibold transition ${
-                isActive ? "text-primary" : "text-textGray"
-              }`
-            }
-          >
-            Home
-          </NavLink>
-
-          <NavLink
-            to="/about"
-            onClick={() => setIsOpen(false)}
-            className={({ isActive }) =>
-              `block font-semibold transition ${
-                isActive ? "text-primary" : "text-textGray"
-              }`
-            }
-          >
-            About
-          </NavLink>
-
-          <NavLink
-            to="/contact"
-            onClick={() => setIsOpen(false)}
-            className={({ isActive }) =>
-              `block font-semibold transition ${
-                isActive ? "text-primary" : "text-textGray"
-              }`
-            }
-          >
-            Contact
-          </NavLink>
+        <div className="md:hidden bg-secondary px-6 py-6 space-y-4 fl flex flex-col">
+          {navLinks &&
+            navLinks.length > 0 &&
+            navLinks.map(({ label, path }) => (
+              <NavLink
+                key={path}
+                to={path}
+                onClick={closeMenu}
+                className={navLinkClass}
+              >
+                {label}
+              </NavLink>
+            ))}
         </div>
       )}
     </nav>
