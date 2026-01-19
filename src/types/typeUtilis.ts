@@ -41,7 +41,46 @@ declare global {
   };
   type Stat = StatItemProps;
   type JobFinderSectionProps = {
-  imageFirst?: boolean;
-};
+    imageFirst?: boolean;
+  };
+  interface Name {
+    firstname: string;
+    lastname: string;
+  }
 
+  interface User {
+    id?: number;
+    email: string;
+    username: string;
+    password: string;
+    name: Name;
+  }
+  interface UserState {
+    users: User[];
+    loading: boolean;
+    error: string | null;
+  }
+  interface ButtonProps {
+    text: string;
+    disabled: boolean;
+  }
+ interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  label: string;
+  showPasswordToggle?: boolean;
+}
+
+  interface TextProps {
+    children: React.ReactNode;
+    className?: string;
+  }
+  interface LoginModalProps {
+    isOpen: boolean;
+    onClose: () => void;
+    onOpenSignUp: () => void;
+  }
+  interface SignUpModalProps {
+    isOpen: boolean;
+    onClose: () => void;
+    onOpenLogin: () => void;
+  }
 }

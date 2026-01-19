@@ -5,18 +5,24 @@ import { HomePage } from "./Pages/HomePage";
 import { AboutPage } from "./Pages/AboutPage";
 import { ContactPage } from "./Pages/ContactPage";
 import { Navbar } from "./Layout/Navbar";
+import UsersList from "./components/UserList";
+import AuthContainer from "./components/Authentication";
 
 function App() {
   return (
     <BrowserRouter>
       <Header />
-      <Navbar/>
+      <Navbar />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/about" element={<AboutPage />} />
-        <Route path="/contact" element={<ContactPage/>}/>
+        <Route path="/contact" element={<ContactPage />} />
       </Routes>
       <Footer />
+      <Routes>
+        <Route path="/users" element={<UsersList />} />
+        <Route path="/login" element={<AuthContainer />} />
+      </Routes>
     </BrowserRouter>
   );
 }

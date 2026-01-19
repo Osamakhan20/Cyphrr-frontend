@@ -1,12 +1,16 @@
 import { useState } from "react";
 import { Logo, PersonIcon } from "../Helper/Icons";
 import { NavLink } from "react-router-dom";
+import LoginModal from "../components/LoginModal";
+import SignUpModal from "../components/SignUpModal";
 import AppConstants from "../Helper/AppConstant";
 
 const { navLinks } = AppConstants;
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const [isSignUpOpen, setIsSignUpOpen] = useState(false);
 
   const closeMenu = () => setIsOpen(false);
 
@@ -35,7 +39,9 @@ export const Navbar = () => {
               My Account
             </button>
 
-            <button className="bg-lime-400 text-black px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition">
+            <button
+              onClick={() => setIsSignUpOpen(true)}
+              className="bg-lime-400 text-black px-5 py-2 rounded-lg font-semibold hover:opacity-90 transition">
               Create Account
             </button>
           </div>
@@ -65,6 +71,18 @@ export const Navbar = () => {
             ))}
         </div>
       )}
+      
+      <LoginModal
+        isOpen={isLoginOpen}
+        onClose={() => setIsLoginOpen(false)}
+        onOpenSignUp={() => setIsSignUpOpen(true)}
+      />
+
+      <SignUpModal
+        isOpen={isSignUpOpen}
+        onClose={() => setIsSignUpOpen(false)}
+        onOpenLogin={() => setIsLoginOpen(true)}
+      />
     </nav>
   );
 };
