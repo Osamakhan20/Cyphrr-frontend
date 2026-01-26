@@ -2,6 +2,7 @@
  export const APICONSTANTS = {
 
   baseURL: "https://fakestoreapi.com/",
-   user: "https://fakestoreapi.com/users/"
+    user: "https://fakestoreapi.com/users/",
+   authURL:"https://fakestoreapi.com/auth/login"
   
 };

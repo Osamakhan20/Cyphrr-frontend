@@ -1,7 +1,7 @@
 const AppTexts = {
   LOGIN_TEXT: {
     TITLE: "Sign in",
-    EMAIL_LABEL: "Email or phone number",
+    EMAIL_LABEL: "Username",
     PASSWORD_LABEL: "Password",
     REMEMBER_ME: "Remember me",
     NEED_HELP: "Need help?",

@@ -1,6 +1,6 @@
 import { useState } from "react";
-import LoginModal from "../components/LoginModal";
-import SignUpModal from "../components/SignUpModal";
+import LoginModal from "./LoginModal";
+import SignUpModal from "./SignUpModal";
 
 const AuthContainer = () => {
   const [loginOpen, setLoginOpen] = useState(false);

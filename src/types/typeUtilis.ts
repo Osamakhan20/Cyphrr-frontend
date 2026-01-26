@@ -64,10 +64,10 @@ declare global {
     text: string;
     disabled: boolean;
   }
- interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
-  label: string;
-  showPasswordToggle?: boolean;
-}
+  interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+    label: string;
+    showPasswordToggle?: boolean;
+  }
 
   interface TextProps {
     children: React.ReactNode;
@@ -83,4 +83,71 @@ declare global {
     onClose: () => void;
     onOpenLogin: () => void;
   }
+
+  interface UsersState {
+    users: User[];
+    singleUser: User | null;
+    loading: boolean;
+    currentUser: User | null;
+    isLoggedIn: boolean;
+    error: string | null | undefined;
+  }
+  
+type AuthState = {
+  currentUser: User | null;
+  isLoggedIn: boolean;
+  users: User[];
+  loading: boolean;
+  error: string | null;
+  token: null
+};
+type loginPayload = {
+  username: string;
+  password: string;
+}
+
+interface SupabaseUser {
+  id: string;
+  email?: string;
+  user_metadata?: {
+    firstName?: string;
+    lastName?: string;
+  };
+}
+
+interface AuthSession {
+  access_token: string;
+  token_type?: string;
+  expires_in?: number;
+}
+
+interface SupabaseAuthResponse {
+  user: SupabaseUser | null;
+  session: AuthSession | null;
+}
+
+interface SignUpPayload {
+  email: string;
+  password: string;
+  firstName: string;
+  lastName: string;
+}
+
+
+type LoginPayload = {
+  email: string;
+  password: string;
+};
+
+type AuthReducerState = {
+  user: SupabaseUser | null;
+  access_token: string | null;
+  isAuthenticated: boolean;
+  loading: boolean;
+  error: string | null | unknown;
+  };
+  type Session = {
+  accessToken: string;
+}
+
 }
