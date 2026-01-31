@@ -222,6 +222,54 @@ const AppConstants = {
       paragraph: "Contact us",
     },
   },
+  SignUpForm: {
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+  },
+  SignInForm: {
+    email: "",
+    password: "",
+  },
+  ForgetPasswordForm: {
+    password: "",
+    confirmPassword: "",
+  },
+  getEditUserForm: (user: SupabaseUser) => ({
+    firstName: user.user_metadata?.firstName || "",
+    lastName: user.user_metadata?.lastName || "",
+    email: user.email || "",
+    password: "",
+  }),
+
+  isAuthFormDisabled: (form: SignUpPayload, mode: "signup" | "edit") => {
+    if (!form.firstName.trim()) return true;
+    if (!form.lastName.trim()) return true;
+    if (!form.email.trim()) return true;
+    if (mode === "signup" && !form.password.trim()) return true;
+
+    return false;
+  },
+
+  buildUpdateUserPayload: (form: SignUpPayload) => ({
+    email: form.email,
+    data: {
+      firstName: form.firstName,
+      lastName: form.lastName,
+    },
+  }),
+    
+
+
+  getUserInitials: (user: SupabaseUser) => {
+  const first = user?.user_metadata?.firstName?.[0] || "";
+  const last = user?.user_metadata?.lastName?.[0] || "";
+  return (first + last).toUpperCase() || "U";
+},
+
+
+
 };
 
 export default AppConstants;

@@ -7,6 +7,7 @@ const AppTexts = {
     NEED_HELP: "Need help?",
     NO_ACCOUNT: "Don’t have an account?",
     SIGN_UP: "Sign up",
+    FORGOT_PASSWORD: "Forgot your password?",
     RECAPTCHA:
       "This page is protected by Google reCAPTCHA to ensure you're not a bot.",
     LEARN_MORE: "Learn more.",

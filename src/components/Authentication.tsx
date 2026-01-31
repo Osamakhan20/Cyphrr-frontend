@@ -1,30 +1,35 @@
-import { useState } from "react";
+import { useSelector } from "react-redux";
+import ForgotPasswordModal from "./ForgotPasswordModal";
 import LoginModal from "./LoginModal";
 import SignUpModal from "./SignUpModal";
+import type { RootState } from "../app/store";
 
-const AuthContainer = () => {
-  const [loginOpen, setLoginOpen] = useState(false);
-  const [signupOpen, setSignupOpen] = useState(false);
+const AuthContainer = ({ activeModal, setActiveModal }: AuthContainerProps) => {
+  const { user } = useSelector((state: RootState) => state.auth);
+
+  const isEditMode = activeModal === "edit";
 
   return (
     <>
-      <button
-        onClick={() => setSignupOpen(true)}
-        className="rounded-md bg-black px-4 py-2 text-white"
-      >
-        Open SignUp
-      </button>
-
       <LoginModal
-        isOpen={loginOpen}
-        onClose={() => setLoginOpen(false)}
-        onOpenSignUp={() => setSignupOpen(true)}
+        isOpen={activeModal === "login"}
+        onClose={() => setActiveModal(null)}
+        onOpenSignUp={() => setActiveModal("signup")}
+        onOpenForgotPassword={() => setActiveModal("forgot")}
       />
 
       <SignUpModal
-        isOpen={signupOpen}
-        onClose={() => setSignupOpen(false)}
-        onOpenLogin={() => setLoginOpen(true)}
+        isOpen={activeModal === "signup" || activeModal === "edit"}
+        mode={isEditMode ? "edit" : "signup"}
+        user={isEditMode ? user : undefined}
+        onClose={() => setActiveModal(null)}
+        onOpenLogin={() => setActiveModal("login")}
+      />
+
+      <ForgotPasswordModal
+        isOpen={activeModal === "forgot"}
+        onClose={() => setActiveModal(null)}
+        onOpenLogin={() => setActiveModal("login")}
       />
     </>
   );

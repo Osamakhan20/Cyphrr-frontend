@@ -77,8 +77,22 @@ declare global {
     isOpen: boolean;
     onClose: () => void;
     onOpenSignUp: () => void;
+    onOpenForgotPassword: () => void;
   }
   interface SignUpModalProps {
+    isOpen: boolean;
+    onClose: () => void;
+    onOpenLogin: () => void;
+    mode?: "signup" | "edit";
+    user?: {
+      id: string;
+      email: string;
+      firstName: string;
+      lastName: string;
+    };
+  }
+
+  interface ForgetPasswordModalProps {
     isOpen: boolean;
     onClose: () => void;
     onOpenLogin: () => void;
@@ -92,62 +106,74 @@ declare global {
     isLoggedIn: boolean;
     error: string | null | undefined;
   }
-  
-type AuthState = {
-  currentUser: User | null;
-  isLoggedIn: boolean;
-  users: User[];
-  loading: boolean;
-  error: string | null;
-  token: null
-};
-type loginPayload = {
-  username: string;
-  password: string;
-}
 
-interface SupabaseUser {
-  id: string;
-  email?: string;
-  user_metadata?: {
-    firstName?: string;
-    lastName?: string;
+  type AuthState = {
+    currentUser: User | null;
+    isLoggedIn: boolean;
+    users: User[];
+    loading: boolean;
+    error: string | null;
+    token: null;
   };
-}
+  type loginPayload = {
+    username: string;
+    password: string;
+  };
 
-interface AuthSession {
-  access_token: string;
-  token_type?: string;
-  expires_in?: number;
-}
+  interface SupabaseUser {
+    id: string;
+    email?: string;
+    user_metadata?: {
+      firstName?: string;
+      lastName?: string;
+    };
+  }
 
-interface SupabaseAuthResponse {
-  user: SupabaseUser | null;
-  session: AuthSession | null;
-}
+  interface AuthSession {
+    access_token: string;
+    token_type?: string;
+    expires_in?: number;
+  }
 
-interface SignUpPayload {
-  email: string;
-  password: string;
-  firstName: string;
-  lastName: string;
-}
+  interface SupabaseAuthResponse {
+    user: SupabaseUser | null;
+    session: AuthSession | null;
+  }
 
+  interface SignUpPayload {
+    email: string;
+    password: string;
+    firstName: string;
+    lastName: string;
+  }
 
-type LoginPayload = {
-  email: string;
-  password: string;
-};
+  type LoginPayload = {
+    email: string;
+    password: string;
+  };
 
-type AuthReducerState = {
-  user: SupabaseUser | null;
-  access_token: string | null;
-  isAuthenticated: boolean;
-  loading: boolean;
-  error: string | null | unknown;
+  type AuthReducerState = {
+    user: SupabaseUser | null;
+    access_token: string | null;
+    isAuthenticated: boolean;
+    loading: boolean;
+    error: string | null | unknown;
+  };
+  type ResetPasswordForm = {
+    password: string;
+    confirmPassword: string;
   };
   type Session = {
-  accessToken: string;
-}
+    accessToken: string;
+  };
+  type NavbarProps = {
+    openAuth: (modal: "login" | "signup" | "forgot" | "edit") => void;
+  };
+  type AuthContainerProps = {
+    activeModal: "login" | "signup" | "forgot" | null | "edit";
+    setActiveModal: React.Dispatch<
+      React.SetStateAction<"login" | "signup" | "forgot" | "edit" | null>
+    >;
+  };
 
 }
