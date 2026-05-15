@@ -148,7 +148,7 @@ const SignUpModal: React.FC<SignUpModalProps> = ({
           </label>
           <Input
             type="text"
-            value={form.firstName}
+            value={form?.firstName}
             name="firstName"
             onChange={handleOnChange}
             placeholder="First name"
